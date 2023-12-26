@@ -57,7 +57,10 @@ public class ShipMove : MonoBehaviour
     }
     private void OnTriggerEnter (Collider other)
     {
-        Debug.Log("Game Over!");
+        if (other.gameObject.CompareTag("Enemy1"))
+        {
+            Debug.Log("Game Over!");
+        }
     } 
 }
 
