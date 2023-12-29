@@ -6,7 +6,7 @@ public class ShipMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    float speed = 300.0f;
+    float speed = 400.0f;
     int xrange = 640;
     int zrange = 300;
     public float horizontalInput;
@@ -57,7 +57,7 @@ public class ShipMove : MonoBehaviour
     }
     private void OnTriggerEnter (Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy1"))
+        if (!other.gameObject.CompareTag("Missile"))
         {
             Debug.Log("Game Over!");
         }

@@ -8,9 +8,10 @@ public class Projectile : MonoBehaviour
     float speed = 600f;
     private float xBound = 640;
     private float zBound = 300f;
+    //public ParticleSystem Impact;
     void Start()
     {
-        
+       // Impact = GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -34,5 +35,14 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Player"))
+        {
+            //Impact.Play();
+            Destroy(gameObject);
+        }
+
+    }
+
 }

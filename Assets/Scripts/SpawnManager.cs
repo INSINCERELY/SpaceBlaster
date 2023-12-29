@@ -9,7 +9,7 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 630f;
     private float spawnPosZ = 300;
     private float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    private float spawnInterval = 1.0f;
     void Start()
     {
         InvokeRepeating("SpawnRandomEnemy", startDelay, spawnInterval);

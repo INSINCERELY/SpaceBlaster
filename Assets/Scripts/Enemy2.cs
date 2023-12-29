@@ -7,7 +7,7 @@ public class Enemy2 : MonoBehaviour
 {
     // Start is called before the first frame update
     private float topBound = 300f;
-    private float speed = 100000f;
+    private float speed = 240000f;
     private Rigidbody rb;
     void Start()
     {
@@ -35,6 +35,7 @@ public class Enemy2 : MonoBehaviour
         if (other.gameObject.CompareTag("Missile"))
         {
             Destroy(gameObject);
+            
         }
     }
 }
