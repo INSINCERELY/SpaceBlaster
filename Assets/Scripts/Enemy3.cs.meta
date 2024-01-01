@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - Bullets: {fileID: 8292331684766121786, guid: 60ec28fcdae65294e9837ec32ce8bc13, type: 3}
+  - explosionSound: {fileID: 8300000, guid: 80ca4773e2027024aa5386b4278b65aa, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

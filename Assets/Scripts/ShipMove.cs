@@ -13,6 +13,7 @@ public class ShipMove : MonoBehaviour
     public float verticalInput;
     public ParticleSystem beams;
     [SerializeField] GameObject projectilePrefab;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,6 +62,8 @@ public class ShipMove : MonoBehaviour
         {
             Debug.Log("Game Over!");
         }
-    } 
+    }
+
+    
 }
 

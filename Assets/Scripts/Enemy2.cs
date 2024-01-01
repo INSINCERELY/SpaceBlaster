@@ -5,38 +5,54 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-    // Start is called before the first frame update
     private float topBound = 300f;
-    private float speed = 240000f;
+    private float speed = 24000f;
     private Rigidbody rb;
+    [SerializeField] AudioClip explosionSound; // Add explosion sound field
+    private AudioSource enemyAudio;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        enemyAudio = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        rb.velocity = transform.forward * speed * Time.deltaTime;
         if (transform.position.z > topBound)
         {
-            Destroy(gameObject);
+            DestroyEnemy();
         }
         else if (transform.position.z < -topBound)
         {
-            Destroy(gameObject);
+            DestroyEnemy();
         }
-        
-
     }
-    private void OnTriggerEnter(Collider other)
+
+    void FixedUpdate()
+    {
+        rb.velocity = transform.forward * speed * Time.deltaTime;
+    }
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Missile"))
         {
-            Destroy(gameObject);
-            
+           
+            PlayExplosionSound(); // Add explosion sound when destroyed
+            DestroyEnemy();
         }
+    }
+
+    void DestroyEnemy()
+    {
+        Destroy(gameObject);
+    }
+
+    void PlayExplosionSound()
+    {
+        //Debug.Log("Playing explosion sound");
+        // AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        enemyAudio.PlayOneShot(explosionSound, 1.0f);
     }
 }
 
