@@ -36,11 +36,11 @@ public class Enemy3 : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Missile"))
+        if (other.gameObject.CompareTag("Missile")|| other.gameObject.CompareTag("Player"))
         {
             
             CancelInvoke("SpawnBullet");
-            PlayExplosionSound(); // Add explosion sound when destroyed
+           // PlayExplosionSound(); // Add explosion sound when destroyed
             DestroyEnemy();
         }
     }

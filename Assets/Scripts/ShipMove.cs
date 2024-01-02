@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShipMove : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class ShipMove : MonoBehaviour
     public float verticalInput;
     public ParticleSystem beams;
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject gameOver;
 
     void Start()
     {
@@ -61,7 +63,15 @@ public class ShipMove : MonoBehaviour
         if (!other.gameObject.CompareTag("Missile"))
         {
             Debug.Log("Game Over!");
+            gameOver.SetActive(true);
+            Time.timeScale = 0f;
         }
+    }
+    public void Retry()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
+
     }
 
     
