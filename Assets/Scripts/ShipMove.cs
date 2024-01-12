@@ -7,7 +7,7 @@ public class ShipMove : MonoBehaviour
 {
     // Start is called before the first frame update
     private Rigidbody rb;
-    float speed = 400.0f;
+    float speed = 500.0f;
     int xrange = 640;
     int zrange = 300;
     public float horizontalInput;

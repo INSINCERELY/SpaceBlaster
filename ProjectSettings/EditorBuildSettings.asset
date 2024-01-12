@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/F3_Corvette.unity
+    guid: 42f7d4f79ced78940a2bb696d739c8db
   m_configObjects: {}

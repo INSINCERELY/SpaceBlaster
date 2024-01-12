@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Bullets : MonoBehaviour
 {
     // Start is called before the first frame update
-    float speed = 400f;
+    float speed = 200f;
     private float xBound = 640;
     private float zBound = 300f;
     private GameObject player;
